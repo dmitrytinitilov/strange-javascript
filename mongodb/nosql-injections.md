@@ -1,0 +1,1 @@
+https://habrahabr.ru/company/xakep/blog/143909/
