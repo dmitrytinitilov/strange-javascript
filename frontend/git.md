@@ -181,6 +181,9 @@ https://habrahabr.ru/company/mailru/blog/340558/
 4. Курс по git с кучей заданий
 http://gitimmersion.com
 
+5. Методология Gitflow
+https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow
+
 **Практика**
 
 1. Создать новую ветку feature_readme, сделать  файл README.md, добавить его в эту ветку. Объединить ветку с веткой master, залить на github.

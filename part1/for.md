@@ -37,24 +37,17 @@ for (i=0;i<n;i++) {
 Допустим у нас несколько элементов с классом block и мы хотим всех их пронумеровать
 
 ```js
-var blocksCollection = document.querySelectorAll('.block');
+var blocks = document.querySelectorAll('.block');
+
+var n = blocks.length;
 
 for (i=0;i<n;i++) {
-    blocksCollection[i].innerHTML = i;
+    blocks[i].innerHTML = i;
 }
 
 ```
 
-**document.write()**
 
-Попробуем выводить html-код из под javascript. Код ниже выведет 10 блоков
-
-```js
-var n=10;
-for (i=0;i<n;i++) {
-    document.write('<div class="block"></div> ');
-}	
-```
 
 **Практика:**
 

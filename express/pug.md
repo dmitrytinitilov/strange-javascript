@@ -171,8 +171,6 @@ var server = app.listen(8080,function(){
 })
 ```
 
-
-
 **Интересное чтиво:**
 
 1. Полезная статья о pug, которая заставит Вас улыбнуться
@@ -189,3 +187,8 @@ https://www.packtpub.com/books/content/using-handlebars-express
 
 5. Использование шаблонизаторов в express
 https://webapplog.com/jade-handlebars-express/
+
+
+**Практика:**
+
+1. Делаем пререндеринг страниц

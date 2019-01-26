@@ -6,26 +6,23 @@
   * [Переменные](part1/variables.md)
   * [\# Типы данных в JavaScript](part1/js-types.md)
   * [Работа с селекторами](part1/work_with_selectors.md)
-  * [\#Цикл for](part1/for.md)
-  * [\# Конструкция if](part1/if.md)
   * [Генерация DOM-объектов](part1/dom_generation.md)
-  * [\# alert prompt confirm](part1/alert_prompt_confirm.md)
-  * [\#COFFEE Логические операторы](part1/logicaloperators.md)
+  * [Объекты](part1/objects.md)
+  * [\#Строки](part1/strings.md)
+  * [\#Цикл for](part1/for.md)
   * [\#Массивы](part1/arrays.md)
+  * [\# Конструкция if](part1/if.md)
+  * [\# alert prompt confirm](part1/alert_prompt_confirm.md)
   * [\# Применение флагов](part1/flags.md)
+  * [Функции](part1/functions.md)
   * [ \# Оператор деления по модулю](part1/mod.md)
   * [\# Повторения событий](part1/repeating_events.md)
   * [\# Цикл while](part1/while.md)
-  * [\# Циклы с неизвестным количеством итераций](part1/unknowncycles.md)
-  * [Объекты](part1/objects.md)
-  * [Функции](part1/functions.md)
   * [Массивы подробнее](part1/arrays.md)
   * [\# Ассоциативные массивы](part1/associative_arrays.md)
-  * [\# Добавляем DOM](part1/dombasics.md)
   * [\# Тренировочные задачи](part1/js_brain_training.md)
   * [\# Контрольная работа](part1/control_tasks.md)
   * [Контрольная работа](part1/knowledgecheck.md)
- 
 * [Глава II - События](part2/readme.md)
   * [Способы установки обработчика](part2/eventhandlers.md)
   * [\# Использование this в обработчиках](part2/usingthis.md)
@@ -63,14 +60,10 @@
   * [split](regexp/split.md)
   * [replace](regexp/replace.md)
 * [Глава VIII - jQuery](part8/readme.md)
-
   * [Быстрый старт](part8/start.md)
   * [\#Работа с элементами страницы](part8/working_with_selectors.md)
-
   * [\#События](part8/jquery_events.md)
-
   * [\# Анимация](part8/jquery_animation.md)
-
   * [\# AJAX](part8/jquery_ajax.md)
   * [\# Модификация DOM](part8/dom_modification.md)
   * [\# Работа с формами](part8/working_with_forms.md)
@@ -78,7 +71,6 @@
   * [\#COFFEE Техника Map-Reduce](part8/map_reduce.md)
   * [\#COFFEE Promises](part8/promises.md)
   * [Код jQuery](part8/jquery_code.md)
-
 * [ООП в JavaScript](oop/README.md)
   * [Способы создания объектов](oop/objects.md)
   * [Контекст вызова функции](oop/function_context.md)
@@ -215,6 +207,4 @@
   * [Ветки на Git](addition/git_branches.md)
   * [Интеграция Slack c Github](addition/adding_github_to_slack.md)
   * [Задания для практики](addition/practice.md)
-
-
 

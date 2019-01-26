@@ -1,2 +1,0 @@
-# #COFFEE Техника Map-Reduce
-
