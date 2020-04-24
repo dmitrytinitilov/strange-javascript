@@ -1,27 +1,33 @@
 #Минификация
 
-Для минификации нам понадобится плагин webpack.optimize.UglifyJsPlugin
+Для минификации нам понадобится плагин UglifyJs
+
+```cmd
+npm install uglifyjs-webpack-plugin --save-dev
+```
+
 
 Конфигурация для минификации
 ```js
-var webpack = require("webpack");
+'use strict';
+
 var path = require('path');
+var HtmlWebpackPlugin = require('html-webpack-plugin');
+
+const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 
 module.exports = {
+    entry:'./app/home.js',
+    output: {
+        path:path.resolve(__dirname,'dist'),
+        filename: 'bundle.js'
+    },
+    plugins: [new HtmlWebpackPlugin({
+        template: 'app/index.html'
+    })],
+    optimization: {
+    	minimizer: [new UglifyJsPlugin()],
+  	}
 
-  entry: "./home.js",
-  devtool: "source-map",
-  output: {
-    path: path.resolve(__dirname, 'dist'),
-    filename: "bundle.min.js"
-  },
-  plugins: [
-    new webpack.optimize.UglifyJsPlugin({minimize: true})
-  ]
-};
-```
-
-Вызов минификации из командной строки
-```
-webpack -p
+}
 ```

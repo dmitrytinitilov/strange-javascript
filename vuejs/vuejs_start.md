@@ -30,3 +30,7 @@
   </body>
 </html>
 ```
+
+**Полезное чтиво:**
+
+1. Примеры приложений на vuejs https://tutorialzine.com/2016/03/5-practical-examples-for-learning-vue-js

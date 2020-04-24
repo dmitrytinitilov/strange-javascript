@@ -3,7 +3,7 @@
 https://mongodb.github.io/node-mongodb-native/api-generated/collection.html
 
 
-**Пример Create запроса**
+**insert**
 
 ```js
 collection.insertOne({hello:'world'});
@@ -15,21 +15,46 @@ collection.insertOne({hello:'world'});
 collection.insertOne(objectToInsert, function(err,docsInserted){
     console.log(docsInserted);
 });
-
 ```
 
 Из него можно будет получить, например id добавляемого документа
 
+В случае варианта с await
+
+```js
+let insertedPicture = await picturesCollection.insertOne({name:req.files.photo.name,type:'basic'});
+```
+
+При этом в объекте, который нам вернут будет свойство insertedPicture c id нужной нам картинки
+
+insertedPicture.insertedId
+
+**insertMany**
+
+```js
+try {
+   db.products.insertMany( [
+      { item: "card", qty: 15 },
+      { item: "envelope", qty: 20 },
+      { item: "stamps" , qty: 30 }
+   ] );
+} catch (e) {
+   print (e);
+}
+```
+
+
+
 **Пример Read запроса**
 
 ```js
-db.user.find( { login:'admin' } );
+user.find( { login:'admin' } );
 ```
 
 Вариант с условиями
 
 ```js
-db.products.find( { qty: { $gt: 25 } }, { item: 1, qty: 1 } )
+products.find( { qty: { $gt: 25 } }, { item: 1, qty: 1 } )
 ```
 
 Если мы используем find, то нам могут вернуть несколько значений. Пройтись по ним можно через cursor
@@ -67,6 +92,16 @@ https://habrahabr.ru/post/134590/
 Для одиночных запросов подходит findOne
 https://docs.mongodb.com/manual/reference/method/db.collection.findOne/
 
+```js
+item = await db.bios.findOne(
+   { contribs: 'OOP' },
+   { _id: 0, 'name.first': 0, birth: 0 }
+)
+```
+
+Второй параметр { _id: 0, 'name.first': 0, birth: 0 }
+означает, что мы не берем данные поля в выдачу.
+
 
 **Пример Update запроса**
 
@@ -76,7 +111,7 @@ https://docs.mongodb.com/manual/reference/method/db.collection.findOne/
 Если нам не нужна замена старой записи, а просто ее модификация, то нужно использовать параметры $inc и $set. $inc - увеличивает указанные поля на указанные значения. $set - устанавливает указанным полям новые значения, неуказанные поля остаются без изменения.
 
 ```js
-db.books.update(
+books.update(
    { _id: 1 },
    {
      $inc: { stock: 5 },
@@ -104,7 +139,7 @@ replies.update({_id:items[i]._id},
 **Пример Delete запроса**
 
 ```js
-db.products.remove( { qty: { $gt: 20 } }, true )
+products.remove( { qty: { $gt: 20 } }, true )
 ```
 true говорит о том, что мы удаляем одну запись
 
@@ -112,12 +147,12 @@ true говорит о том, что мы удаляем одну запись
 ```js
 var ObjectId = require('mongodb').ObjectID;
 
-db.test_users.remove( {"_id": ObjectId("4d512b45cc9374271b02ec4f")});
+test_users.remove( {"_id": ObjectId("4d512b45cc9374271b02ec4f")});
 ```
 
 Получение информации по структуре БД
 ```js
-db.users.findOne({_id:ObjectId(...)})
+users.findOne({_id:ObjectId(...)})
 ```
 
 **Полезное чтиво:**

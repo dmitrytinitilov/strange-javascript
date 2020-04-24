@@ -63,6 +63,23 @@ buttonObj.addEventListener( "click" ,doSomething, false);
 
 Обратите внимание, что во втором и третьем случаях мы передаем функцию doSomething, а не ее вызов doSomething(). В третем случае от названия события отбрасывается приставка on
 
+Такой способ позволяет нам устанавливать несколько обработчиков на один и тот же объект.
+
+**removeEventListener**
+
+Функция removeEventListener позволяет убрать обработчик с кнопки
+
+Пример для удаления обработчика событий
+
+```js
+var div = document.getElementById('div');
+var listener = function (event) {
+  /* do something here */
+};
+div.addEventListener('click', listener, false);
+div.removeEventListener('click', listener, false);
+```
+
 
 **Практика:**
 1. Есть три DIV'a . При клике на div выводится всплывающее сообщение. На каждом из DIV'ов используется один из способов задания обработчика 
@@ -73,7 +90,8 @@ buttonObj.addEventListener( "click" ,doSomething, false);
 6. 	Есть много кружков. При клике на кружок, его счет увеличивается
 7.	Есть большой серый блок и маленькие цветные DIV'ы. При клике на маленький DIV, большой DIV выделяется выбранным цветом .
 8.	Выводим круги в случайных позициях со случайными числами внутри. При клике на круг число в нем уменьшается. Когда счет доходит до нуля, круг исчезает — счет увеличивается.
-9.	Сделать Cookie Clicker http://orteil.dashnet.org/cookieclicker/ 
+9.  Сделать Cookie Clicker http://orteil.dashnet.org/cookieclicker/ 
+10. Сделать интерфейс для ввода логина, пароля
 
 
 

@@ -7,6 +7,11 @@ https://www.npmjs.com/package/express-fileupload
 
 Нам необходимо подключить модуль
 
+```cli
+npm i express-fileupload
+```
+
+
 ```js
 var fileUpload = require('express-fileupload');
 
@@ -16,18 +21,26 @@ app.use(fileUpload({}));
 Далее нам нужна форма с enctype="multipart-formdata"
 
 ```js
-res.write('<form action="/get_file" method="POST" enctype="multipart/form-data" >');
-   res.write('<input type="file" name="avatar">');
-   res.write('<input type="submit">');
-res.write('</form>');
+  res.write('<form action="/upload" method="POST" enctype="multipart/form-data" >');
+  res.write('<input type="file" name="photo">');
+  res.write('<input type="submit">');
+  res.write('</form>');
 ```
 
-Если у нашего input'a c type=file ыбл name avatar,то данные по файлу будут доступны в req.files.avatar
+или если у Вас установлен pug, то можно сделать вот такой код
+
+```js
+form(action='/upload' method='POST' enctype='multipart/form-data')
+    input(type='file' name='photo')
+    input(type='submit')
+```
+
+Если у нашего input'a c type=file был name avatar,то данные по файлу будут доступны в req.files.photo
 
 Поскольку nodejs копирует файлы в свою локальную директорию, нам небходимо перенести их в нужную нам папку
 
 ```js
-req.files.avatar.mv('public/pics/'+req.files.avatar.name);
+req.files.photo.mv('public/pics/'+req.files.photo.name);
 ```
 
 Полный код
@@ -42,22 +55,22 @@ app.use(fileUpload({}));
 app.use(express.static('public'));
 
 app.get('/', function (req, res) {
-   res.send('Hello World');
+  res.send('Hello World');
 })
 
 app.get('/form', function (req, res) {
-	res.setHeader('content-type', 'text/html;charset=utf-8');
-    res.write('<form action="/get_file" method="POST" enctype="multipart/form-data" >');
-  		res.write('<input type="file" name="avatar">');
-   		res.write('<input type="submit">');
-   	res.write('</form>');
-   	res.end();
+  res.setHeader('content-type', 'text/html;charset=utf-8');
+  res.write('<form action="/upload" method="POST" enctype="multipart/form-data" >');
+  res.write('<input type="file" name="photo">');
+  res.write('<input type="submit">');
+  res.write('</form>');
+  res.end();
 })
 
-app.post('/get_file', function(req, res) {
-  req.files.avatar.mv('public/pics/'+req.files.avatar.name);
-  res.end(req.files.avatar.name);
-  console.log(req.files.avatar); // the uploaded file object
+app.post('/upload', function(req, res) {
+  req.files.photo.mv('public/pics/'+req.files.photo.name);
+  res.end(req.files.photo.name);
+  console.log(req.files.photo); // the uploaded file object
 });
 
 var server = app.listen(8081, function () {
@@ -128,6 +141,15 @@ var server = app.listen(8081, function () {
 
 })
 
+```
+
+**Генерация случайной строки**
+
+
+```js
+var crypto = require('crypto');
+
+var id = crypto.randomBytes(20).toString('hex');
 ```
 
 **Практика:**

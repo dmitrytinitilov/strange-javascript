@@ -30,7 +30,8 @@ app.use(cookieParser());
 
 ```js
 app.get('/cookie',function(req, res){
-     res.cookie('cookie_name' , 'cookie_value').send('Cookie is set');
+     res.cookie('cookie_name' , 'cookie_value');
+     res.end('Cookie is set');
 });
 ```
 

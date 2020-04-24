@@ -69,3 +69,6 @@ http://exploringjs.com/es6/ch_promises.html
 
 4. Создание цепочек вызовов в JS  
 https://html5hive.org/how-to-chain-javascript-promises/
+
+5. Примеры Promise.all и Promise.race
+https://habr.com/ru/company/ruvds/blog/418085/

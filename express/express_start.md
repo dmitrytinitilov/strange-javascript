@@ -1,31 +1,24 @@
 # Основы Express
 
-https://www.tutorialspoint.com/nodejs/nodejs_express_framework.htm
 
-Установка
+Установим модуль express в наш проект
 ```
 $ npm install express --save
 ```
 
+Напишем минимальный server.js
+
 ```js
-var express = require('express');
-var app = express();
+const express = require('express');
+const app = express();
 
-app.get('/', function (req, res) {
-   res.send('Hello World');
+app.get('/', function(req,res){
+	res.end('Hello World!');
 })
 
-var server = app.listen(8081, function () {
-
-  var host = server.address().address
-  var port = server.address().port
-
-  console.log("Example app listening at http://%s:%s", host, port)
-
-})
+app.listen(8080);
 ```
 
-res.send() - заканчивает отдачу данных
 
 Подробно о response object
 https://www.tutorialspoint.com/nodejs/nodejs_response_object.htm
@@ -93,7 +86,13 @@ https://developer.mozilla.org/en-US/docs/Learn/Server-side/Express_Nodejs/skelet
 4. Диспетчеры процессов под Express
 http://expressjs.com/ru/advanced/pm.html
 
+5. https://www.tutorialspoint.com/nodejs/nodejs_express_framework.htm
+
+
+
 
 **Практика:**
 
-1. Сделать галерею картинок. При клике на картинку, мы переходим на нее
+1. Делаем сайт, состоящий из трех страниц. На каждой из страниц должно быть навигационное меню между ними.
+
+2. Сделать галерею картинок. При клике на картинку, мы переходим на нее.

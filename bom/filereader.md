@@ -1,4 +1,4 @@
-# COFFEE FileReader
+# FileReader
 
 https://developer.mozilla.org/ru/docs/Web/API/FileReader/readAsDataURL
 

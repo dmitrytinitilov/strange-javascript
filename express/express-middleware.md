@@ -4,6 +4,11 @@ http://expressjs.com/ru/guide/writing-middleware.html
 
 https://codeforgeek.com/2015/12/how-to-write-custom-middleware-for-expressjs/
 
+Полезное чтиво:
+
+1. Проблемы с обработкой ошибок в путях express
+https://toster.ru/q/307320
+
 
 **Практика:**
 

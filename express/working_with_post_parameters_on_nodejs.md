@@ -6,7 +6,17 @@
 
 http://stackoverflow.com/questions/24330014/bodyparser-is-deprecated-express-4
 
+Не забываем его установить
+
+```cli
+npm i body-parser
+```
+
+А затем подключить в наш файл
+
+
 ```js
+var bodyParser = require('body-parser')
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({
   extended: true
@@ -14,6 +24,8 @@ app.use(bodyParser.urlencoded({
 ```
 
 **Обработка POST-запроса**
+
+После подключения bodyParser, POST-параметры будут доступны в req.body
 
 ```js
 app.post('/check',function(req,res){

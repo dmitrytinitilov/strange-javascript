@@ -47,6 +47,11 @@ console.log(this);//?
 **self**
 
 
+**Цепочки вызовов**
+
+https://learn.javascript.ru/task/chain-calls
+
+
 
 **Практика**
 

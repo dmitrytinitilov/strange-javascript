@@ -39,18 +39,13 @@ found_people_promise.then(function(people){
 })
 ```
 
-**Подсчет количества элементов на странице**
+**Подсчет количества элементов в коллекции**
+
+
+https://docs.mongodb.com/manual/reference/method/db.collection.countDocuments/
 
 ```js
-db.collection.count()
-```
-
-Вариант с callback'ом
-
-```js
-Model.count({email: 'xyz@gmail.com'}, function (err, count) {
-   console.log(count);
-});
+db.collection.countDocuments()
 ```
 
 **Сортировка**

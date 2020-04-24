@@ -1,3 +1,5 @@
+#GET-параметры
+
 https://scotch.io/tutorials/use-expressjs-to-get-url-and-post-parameters
 
 http://stackoverflow.com/questions/20089582/how-to-get-url-parameter-in-express-node-js
@@ -21,3 +23,4 @@ app.get('/p/:tagId', function(req, res) {
 **Практика:**
 
 1. Сделать скрипт, который находит сумму двух чисел
+2. Сделать трехстраничный сайт

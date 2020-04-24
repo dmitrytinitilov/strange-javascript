@@ -18,3 +18,9 @@ https://es6.io/
 
 6. Семь хаков по ES6
 https://medium.com/dailyjs/7-hacks-for-es6-developers-4e24ff425d0b
+
+7. 13 полезных однострочников на JavaScript
+https://habr.com/ru/company/ruvds/blog/45633
+
+8. JavaScript, 7 полезных мелочей
+https://habr.com/ru/company/ruvds/blog/449948/

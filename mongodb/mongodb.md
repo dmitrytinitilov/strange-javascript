@@ -34,16 +34,12 @@ var mongo = require('mongodb');
 Создадим файл db.js подключения к БД
 
 ```js
-module.exports = function() {
-	return (async function() {
-		var MongoClient = require('mongodb').MongoClient;
-		var url = 'mongodb://localhost:27017';
+module.exports = async function() {
+	let MongoClient = require('mongodb').MongoClient;
 
-		var database = await MongoClient.connect(url,{useNewUrlParser: true});
-		const db = database.db('your_database');
-		return db;
-	})()
+	let database = await MongoClient.connect('mongodb://localhost:27017',{useNewUrlParser : true});
 
+	return  database.db('yourdatabase');
 }
  ```
 
@@ -99,8 +95,14 @@ module.exports = function() {
 
 ```
 
+Для сохранения соединения мы можем использовать переменную app.locals. Например
 
-
+```js
+(async () => {
+	let getDb = require('./db');
+	app.locals.db = await getDb();
+})()
+```
 
 
 **Полезное чтиво:**

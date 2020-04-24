@@ -1,4 +1,4 @@
-# COFFEE NodeJS Старт
+# NodeJS Старт
 
 Нам понадобится NodeJS https://nodejs.org/en/ и NPM https://www.npmjs.com/
 

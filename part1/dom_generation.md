@@ -22,7 +22,7 @@ http://www.w3schools.com/jsref/met_document_createelement.asp
 ```js
 var image = document.createElement("img");
 
-image.src = 'odessa.jpg'
+image.src = 'odessa.jpg';
 
 document.body.appendChild(image);
 ```

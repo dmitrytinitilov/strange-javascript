@@ -18,6 +18,8 @@ html
 Подключим pug к проекту
 
 ```js
+pug = require(pug);
+
 app.set('view engine', 'pug');
 
 app.get('/test_render',function(req,res){
@@ -27,11 +29,15 @@ app.get('/test_render',function(req,res){
 
 **Передача переменной в шаблон**
 
+Попробуем передать переменную в test_render.pug
+
 ```js
 app.get('/test_render',function(req,res){
 	res.render('test_render',{message:'big start starts here'});
 })
 ```
+
+Создаем test_render.pug
 
 ```jade
 html
@@ -69,7 +75,7 @@ button(class='submit_button') Добавить комментарий
 **Передача параметра в value input'a**
 
 ```jade
-input(type="text", name="date", value=viewpost.date)
+input(type="text" name="date" value=viewpost.date)
 ```
 
 
@@ -134,6 +140,15 @@ else
 
 ```
 
+**Встроенный script**
+
+```jade
+script.
+  var users = !{JSON.stringify(users).replace(/<\//g, "<\\/")}
+```
+
+
+
 **Пример с нахождением суммы двух чисел**
 
 Шаблон формы sum_form.pug
@@ -191,4 +206,5 @@ https://webapplog.com/jade-handlebars-express/
 
 **Практика:**
 
-1. Делаем пререндеринг страниц
+1. Есть массив имен - выводим их ввиде списка
+2. Создаем трехстраничный сайт с навигационным меню сверху. Навигационное меню выносим в отдельный шаблон

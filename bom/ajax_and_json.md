@@ -188,6 +188,26 @@ console.log(obj.length); //3
 console.log(obj[1].surname);//Tolstoy
 ```
 
+**FormData**
+
+```js
+    var xhr = new XMLHttpRequest(),
+    fd = new FormData();
+
+    fd.append( 'file', input.files[0] );
+    xhr.open( 'POST', '/api/upload');
+    xhr.onreadystatechange = handler;
+    xhr.send( fd );
+```
+
+**Полезное чтиво:**
+
+1. XMLHttpRequest VS fetch API
+https://www.sitepoint.com/xmlhttprequest-vs-the-fetch-api-whats-best-for-ajax-in-2019/
+
+2. Почему я до сих пор использую xhr вместо fetch 
+https://gomakethings.com/why-i-still-use-xhr-instead-of-the-fetch-api/
+
 
 **Практика:** 
 

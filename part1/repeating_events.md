@@ -25,6 +25,9 @@ function boom() {
 Можно установить обработчик другим способом
 
 ```html
+<div class="block">
+</div>
+
 <script>
 
 var obj = document.querySelector('.block');
@@ -36,10 +39,10 @@ function boom() {
 }
 </script>
 
-<div class="block">
-</div>
+
 ```
 
+**Подсчет кликов**
 
 Давайте попробуем подсчитать количество кликов
 ```html
